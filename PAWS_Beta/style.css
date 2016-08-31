@@ -36,8 +36,18 @@
 
 /*General*/
 
-h1, h2{
+h1{
 	font-family: Lovelo;
+	font-size: 4em;
+	margin-top:	20px;
+	margin-bottom: 20px;
+	text-decoration: underline;
+}
+
+h2{
+	font-family: Lovelo;
+	margin-top:	20px;
+	margin-bottom: 20px;
 }
 
 h3, h4, h5, h6, p{
@@ -205,6 +215,57 @@ ul.nav li:last-child a {
 	
 }
 
+.goodiesAnchors{
+	background-color: rgba(0,0,0, 0.75);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.goodiesAnchors a:link{
+	color: white;
+}
+
+.goodiesAnchors a:visited{
+	color: white;
+}
+
+.goodiesAnchors a:hover{
+	
+}
+
+.goodiesAnchors a:active{
+	
+}
+
+.profileAnchors{
+	background-color: rgb(48,117,73);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.profileAnchors a:link{
+	color: white;
+}
+
+.profileAnchors a:visited{
+	color: white;
+}
+
+.profileAnchors a:hover{
+	
+}
+
+.profileAnchors a:active{
+	
+}
+
+
 /*Override Dropdown Menu min-width*/
 
 .dropdown-menu {
@@ -212,12 +273,15 @@ ul.nav li:last-child a {
 	min-width: 250px;
 }
 
-/*Events Carousel*/
+/*homecontent.php*/
 
 .divEvents {
 	background-color: rgb(213,67,52);
 	margin: 0;
 	width: 100%;
+	color:white;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 #myCarousel .carousel-inner{
@@ -236,6 +300,14 @@ ul.nav li:last-child a {
 	margin: 50px auto;
 }
 
-.carousel-control{
-	l
+.divCalendar {
+	background-color: white;
+	margin: 0;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.divCalendar iframe {
+	width: 100%;
 }

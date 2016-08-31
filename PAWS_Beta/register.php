@@ -12,6 +12,7 @@ if(isset($_POST['button_register'])) {
 	$dob = trim($_POST['userDOB']);
 	$email = trim($_POST['userEmail']);
 	$upass = trim($_POST['userPassword']);
+	$upic = "Profile_Pics/" . $_POST['userPic'];
 	
 	$uname = strip_tags($uname);
 	$sname = strip_tags($sname);
@@ -38,7 +39,7 @@ if(isset($_POST['button_register'])) {
 		$stmt->execute();*/
 	
 		
-		$query = "INSERT INTO tbUsers(name,surname,dob,email,password, type) VALUES('$uname','$sname','$dob','$email','$password', 'User')";
+		$query = "INSERT INTO tbUsers(name,surname,dob,email,password, type,profilepic) VALUES('$uname','$sname','$dob','$email','$password', 'User', '$upic')";
 		$res = mysql_query($query);
 		
 		if ($res) {
@@ -95,7 +96,7 @@ if(isset($_POST['button_register'])) {
 				<?php
 					if($result) {
 						echo "<h1 id='infoBanner'>" . $msg . "</h1>
-								<h3><a href='#'>Login to continue...</a></h3>";
+								<h3><a href='#' id='login'>Login to continue...</a></h3>";
 					}
 					else {
 						echo "<h1 id='infoBanner'>" . $msg . "</h1>
@@ -117,7 +118,7 @@ if(isset($_POST['button_register'])) {
 						<h4 class="modal-title">Login:</h4>
 					</div>
 					<div class="modal-body">
-						<form action="" method="post">
+						<form action="login.php" method="post">
 							<label for="loginEmail">Email Address:</label>
 							<input class="form-control" name="loginEmail" id="loginEmail" type="email" required />
 							<label for="loginPassword">Enter password:</label>

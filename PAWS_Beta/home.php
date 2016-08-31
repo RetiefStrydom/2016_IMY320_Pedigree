@@ -82,7 +82,7 @@
 		?>
 		<div class='row' id='mainLogo'>
 			<div class='col-md-12 col-sm-12 col-xs-12'>
-				<img src='Logo/mainLogo.png'/>
+				<a href="home.php"><img class="image image-responsive grow" src='Logo/mainLogo.png'/></a>
 			</div>
 		</div>
 	</div>
@@ -106,7 +106,10 @@
 				<table class="table">
 					<tr>
 						<td><a href="#" id="home"><img src="Icons/home.png"/></a></td>
-						<td><a href="#" id="profile"><img src="Icons/profile.png"/></a></td>
+						<? if($type == "User" || $type == "Admin") {
+							echo "<td><a href='#' id='profile'><img src='Icons/profile.png'/></a></td>";
+							}
+						?>
 						<td><a href="#" id="goodies"><img src="Icons/goodies.png"/></a></td>
 						<td><a href="#" id="donations"><img src="Icons/donate.png"/></a></td>
 						<td><a href="#" id="about"><img src="Icons/info.png"/></a></td>

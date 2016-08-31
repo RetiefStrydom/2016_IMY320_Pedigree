@@ -94,6 +94,8 @@
 							<input class="form-control" name="userDOB" id="userDOB" type="date" required />
 							<label for="userEmail">Email Address:</label>
 							<input class="form-control" name="userEmail" id="userEmail" type="email" required />
+							<label for="userPic">Select Profile Pic:</label>
+							<input class="form-control" name="userPic" id="userPic" type="file" required />
 							<label for="userPassword">Choose a password:</label>
 							<input class="form-control" name="userPassword" id="userPassword" type="password" required />
 							<label for="userPasswordConfirm">Confirm password:</label>

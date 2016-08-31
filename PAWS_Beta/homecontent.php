@@ -50,9 +50,9 @@
 	</div>
 	
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row" id="events">
 			<div class="col-md-12 col-sm-12 col-xs-12 divEvents">
-				
+						<h1>Upcoming Events</h1>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 						<!-- Wrapper for slides -->
@@ -113,6 +113,12 @@
 							</a>
 						</div>
 				
+			</div>
+		</div>
+		<div class="row" id="calendar">
+			<div class="col-md-12 col-sm-12 col-xs-12 divCalendar">
+				<h1>Calendar</h1>
+				<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffcc66&amp;src=9ufvjsii2atl3j5s2lrc5oeal4%40group.calendar.google.com&amp;color=%23875509&amp;ctz=Africa%2FJohannesburg" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 			</div>
 		</div>
 	</div>

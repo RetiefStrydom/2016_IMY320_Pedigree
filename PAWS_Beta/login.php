@@ -24,7 +24,12 @@
 			$result = true;
 			$_SESSION['user'] = $row['id'];
 			$_SESSION['userName'] = $row['name'];
+			$_SESSION['surname'] = $row['surname'];
+			$_SESSION['dob'] = $row['dob'];
+			$_SESSION['email'] = $row['email'];
 			$_SESSION['type'] = $row['type'];
+			$_SESSION['pic'] = $row['profilepic'];
+			$_SESSION['event'] = $row['event'];
 			header("Location: home.php");
 		} else {
 			$result = false;
@@ -63,8 +68,12 @@
 						echo "<h1 id='infoBanner'>" . $msg . "</h1>
 								<h3><a href='index.php'>Try again...</a></h3>";
 					}
+					
 				
 				?>
 			</div>
 		</div>
 	</div>
+</body>
+
+</html>

@@ -1,23 +1,20 @@
 <?php
+	session_start();
+	
 	include_once 'dbconnect.php';
 	
-	if(isset($_SESSION['user'])) {
-		$name = $_SESSION['userName'];
-		$type = $_SESSION['type'];
-		
-		$qry = "SELECT * FROM tbUsers WHERE name = '$name'";
-		$result = mysql_query($qry);
-		
-		if(mysql_num_rows($result) > 0) {
-			$events = true;
-			$row = msql_fetch_assoc($result);
-			$msg = "found";
-		}
-		else{
-			$events = false;
-			$msg = "not found";
-		}
-	}
+	$userId = $_SESSION['user'];
+	$userName = $_SESSION['userName'];
+	$userSurname = $_SESSION['surname'];
+	$userDOB = $_SESSION['dob'];
+	$userEmail = $_SESSION['email'];
+	$userType = $_SESSION['type'];
+	$userPic = $_SESSION['pic'];
+	$eventId = $_SESSION['event'];
+	
+	$qry = "SELECT * FROM tbEvents WHERE id = '$eventId'";
+	$result = mysql_query($qry);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +34,17 @@
 	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 	<script src="Libraries/js/bootstrap.min.js"></script>
 	<script src="script.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#deleteProfile").on("click", function(e) {
+				e.preventDefault();
+				
+				if(confirm("Are you sure you wish to delete your profile?")){
+					window.location = $(this).attr('href');
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -55,13 +63,53 @@
 	</div>
 	
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12 divEvents">
-				<h1>
-					<?php 
-						echo "Welcome " . $msg;
-					?>
-				
+		<div class="row" id="me">
+			<h1>ME</h1>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<div>
+					<img src="<? echo $userPic;?>" width="250px" height="250px"/>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<div>
+					<h3>Full name: <? echo $userName . " " . $userSurname;?></h3>
+					<h3>Date of Birth: <? echo $userDOB;?></h3>
+					<h3>Email Address: <? echo $userEmail;?></h3>
+					<h3>Status: <? echo $userType;?></h3>
+				</div>
+			</div>
+		</div>
+		
+			<?	if($userType == "Admin") {
+					echo "<div class='row id='myevents'>
+							<h1>My Current Event:</h1>
+								<div class='col-md-6 col-sm-6 col-xs-12'>";
+									if(mysql_num_rows($result) > 0) {
+										$row = mysql_fetch_assoc($result);
+										
+										echo "<h3>" . $row['name'] . "</h3>"; 
+										echo "<h4>" . $row['description'] . "</h4>"; 
+										echo "<h4>" . $row['date'] . "</h4>
+									</div>";
+										echo "<div class='col-md-6 col-sm-6 col-xs-12'>
+												<img class='image image-responsive pull-right' src='" . $row['image'] . "'/>
+											</div>
+										</div>"; 
+									}
+									else {
+										echo "<h3>No event assigned...</h3>
+										</div>";
+									}
+				}
+			?>
+		</div>
+		<div class="row" id="mysettings">
+			<h1>My Settings</h1>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h3>Edit Profile</h3>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h3><a href="deleteProfile.php" id="deleteProfile">Delete Profile</a></h3>
 			</div>
 		</div>
 	</div>

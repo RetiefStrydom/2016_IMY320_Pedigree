@@ -13,6 +13,9 @@
 		if(mysql_num_rows($result) > 0) {
 			$events = true;
 			$msg = "found";
+			while($row = mysql_fetch_assoc($result)){
+				$adminMembers[] = $row;
+			}
 		}
 		else{
 			$events = false;
@@ -44,14 +47,29 @@
 	<script>
 		$(document).ready(function() {
 			$("#adminNav").hide();
-			$(".content").load("homecontent.php");
+			$("#deleteAdminModal").modal("hide");
 			
 			$("#user").on("click", function(e) {
 				e.preventDefault();
 				
 				$("#adminNav").show();
 			});
+			
+			$("#remove").on("click", function(e) {
+				e.preventDefault();
+				$("#deleteAdminModal").modal("show");
+			});
+			
+			$(".removeAdminForm").submit(function() {
+				if(confirm("Are you sure you wish to remove this user as Admin?")) {
+					return true;
+				}
+				else{
+					return false;
+				}
+			});
 		});
+	</script>
 	</script>
 </head>
 
@@ -75,14 +93,14 @@
 		</div>
 		<div class="row" id="mainLogo">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<img src="Logo/mainLogo.png"/>
+				<a href="home.php"><img class="image image-responsive grow" src='Logo/mainLogo.png'/></a>
 			</div>
 		</div>
 		<div class="row" id="eventsPanel">
 			<div class="panel-group">
 				 <div class="panel-heading"><h1>PAWS Admin:<h1></div>
 				<div class="panel panel-default">
-					 <div class="panel-heading"><h3>Current Admin Members:</h3></div>
+					 <div class="panel-heading"><h3>Current Admin Members:</h3><a class='pull-right' href='#' id="remove">Remove</a><span class='pull-right'> | </span><a class='pull-right' href='#'>Assign</a></div>
 					<div class="panel-body">
 						<table class="table">
 							<tr>
@@ -90,17 +108,18 @@
 								<th>Admin Surname:</th>
 								<th>Admin DOB:</th>
 								<th>Admin Email Address:</th>
+								<th>Current Event:</th>
 							</tr>
 							<?php
 							if($events) {
-								while($row = mysql_fetch_assoc($result))
+								foreach($adminMembers as $member)
 								{
 								echo 
 								"<tr>
-									<td>" . $row['name'] . "</td>
-									<td>" . $row['surname'] . "</td>
-									<td>" . $row['dob'] . "</td>
-									<td>" . $row['email'] . "</td>
+									<td>" . $member['name'] . "</td>
+									<td>" . $member['surname'] . "</td>
+									<td>" . $member['dob'] . "</td>
+									<td>" . $member['email'] . "</td>
 								</tr>";
 								}
 							}
@@ -130,6 +149,38 @@
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--Delete Admin Modal-->
+	
+	<div class="container delete">
+		<div id="deleteAdminModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<div class="modal-content"  style="color:black;">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Remove Admin:</h4>
+					</div>
+					<div class="modal-body">
+						<form class="removeAdminForm" action="removeAdmin.php" method="post">
+							<label for="selectMember">Select Member:</label>
+							<select class="form-control" id="selectMember" name="selectMember">
+								<?
+									if($events) {
+										foreach($adminMembers as $member) {
+											echo "<option value='" . $member['id'] . "'>" . $member['name'] . " " . $member['surname'] . "</option>";
+										}
+									}
+								?>
+							</select>
+							<input class="form-control" type="submit" value="Remove" name="button_remove" id="button_remove"/>
+						</form>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
