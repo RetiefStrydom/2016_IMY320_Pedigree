@@ -6,8 +6,11 @@
 		$email = $_POST['loginEmail'];
 		$upass = $_POST['loginPassword'];
 		
-		$email = strip_tags(trim($email));
-		$upass = strip_tags(trim($upass));
+	//	$email = strip_tags(trim($email));
+	//	$upass = strip_tags(trim($upass));
+	
+		$email =  htmlentities($_POST['loginEmail'],ENT_QUOTES);
+		$upass =  htmlentities($_POST['loginPassword'], ENT_QUOTES);
 		
 		$password = hash('sha256', $upass); // password hashing using SHA256
 		$password = substr($password,0, 7);
