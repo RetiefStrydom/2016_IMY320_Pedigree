@@ -30,7 +30,7 @@
 	<div class="container" id="media">
 		<div class="row" id="photos">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1 class="page-header">Photographs</h1>
+				<h2 class="page-header">Photographs</h2>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -102,7 +102,7 @@
 		
 		<div class="row" id="sounds">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1 class="page-header">Audio</h1>
+				<h2 class="page-header">Audio</h2>
 			</div>
 		</div>
 		
