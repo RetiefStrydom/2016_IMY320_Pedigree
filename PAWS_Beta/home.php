@@ -83,7 +83,7 @@
 		?>
 		<div class='row' id='mainLogo'>
 			<div class='col-md-12 col-sm-12 col-xs-12'>
-				<a href="home.php"><img class="image image-responsive grow" src='Logo/logoklein.png'/></a>
+				<a href="home.php"><img class="image image-responsive grow" src='Logo/logoklein.png' alt="This image could not be displayd"/></a>
 			</div>
 		</div>
 	</div>
@@ -106,10 +106,10 @@
 			<div class="col-md-12 col-sm-12 menuItem">
 				<table class="table">
 					<tr>
-						<td><a href="#" id="home"><img src="Icons/home.png"/></a></td>
-						<td><a href="#" id="goodies"><img src="Icons/goodies.png"/></a></td>
-						<td><a href="#" id="donations"><img src="Icons/donate.png"/></a></td>
-						<td><a href="#" id="about"><img src="Icons/info.png"/></a></td>
+						<td><a href="#" id="home"><img src="Icons/home.png" alt="This image could not be displayd"/></a></td>
+						<td><a href="#" id="goodies"><img src="Icons/goodies.png" alt="This image could not be displayd"/></a></td>
+						<td><a href="#" id="donations"><img src="Icons/donate.png" alt="This image could not be displayd"/></a></td>
+						<td><a href="#" id="about"><img src="Icons/info.png" alt="This image could not be displayd"/></a></td>
 					</tr>
 				</table>
 			</div>
