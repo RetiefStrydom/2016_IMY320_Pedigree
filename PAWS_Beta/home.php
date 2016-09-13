@@ -46,7 +46,7 @@
 	<div class="container-fluid main">
 		<div class="row userDetails">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<p><a href='profile.php' id='profile'><img src='Icons/profileKlein.png'/></a>
+				<p><a href='profile.php' id='profile'><img alt="This image could not be displayd" src='Icons/profileKlein.png'/></a>
 				 Logged in as <a href="" id="user"><?php echo $name ?></a></p>
 			</div>
 		</div>
