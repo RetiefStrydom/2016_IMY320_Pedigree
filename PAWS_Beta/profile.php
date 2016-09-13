@@ -67,7 +67,7 @@
 			<h1>ME</h1>
 			<div class="col-md-6 col-sm-6 col-xs-6">
 				<div>
-					<img src="<? echo $userPic;?>" width="250px" height="250px"/>
+					<img alt="This image could not be displayd" src="<? echo $userPic;?>" width="250px" height="250px"/>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6">
