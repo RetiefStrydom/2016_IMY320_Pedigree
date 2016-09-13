@@ -46,7 +46,8 @@
 	<div class="container-fluid main">
 		<div class="row userDetails">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<p>Logged in as <a href="#" id="user"><?php echo $name ?></a></p>
+				<p><a href='profile.php' id='profile'><img src='Icons/profileKlein.png'/></a>
+				 Logged in as <a href="" id="user"><?php echo $name ?></a></p>
 			</div>
 		</div>
 		<?php if($type == "Admin") {
@@ -82,7 +83,7 @@
 		?>
 		<div class='row' id='mainLogo'>
 			<div class='col-md-12 col-sm-12 col-xs-12'>
-				<a href="home.php"><img class="image image-responsive grow" src='Logo/mainLogo.png'/></a>
+				<a href="home.php"><img class="image image-responsive grow" src='Logo/logoklein.png'/></a>
 			</div>
 		</div>
 	</div>
@@ -106,10 +107,6 @@
 				<table class="table">
 					<tr>
 						<td><a href="#" id="home"><img src="Icons/home.png"/></a></td>
-						<? if($type == "User" || $type == "Admin") {
-							echo "<td><a href='#' id='profile'><img src='Icons/profile.png'/></a></td>";
-							}
-						?>
 						<td><a href="#" id="goodies"><img src="Icons/goodies.png"/></a></td>
 						<td><a href="#" id="donations"><img src="Icons/donate.png"/></a></td>
 						<td><a href="#" id="about"><img src="Icons/info.png"/></a></td>
