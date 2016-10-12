@@ -1,0 +1,424 @@
+/*about.php*/
+
+#ourMission{
+	background-color: rgb(48,117,73);
+	color: white;
+	padding: 20px;
+}
+
+#contactUs{
+	background-color: rgba(14,14,14,0.75);
+	color: white;
+	padding: 20px;
+}
+.icons{
+	width: 25px;
+	height: 25px;
+}
+
+.addIcon{
+	width: 50px;
+}
+
+ul li{
+	list-style-type: none;
+}
+
+/*Transition Class*/
+
+.grow { 
+	transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+	transform: scale(1.1); 
+}
+
+/*Custom Fonts*/
+
+@font-face{
+	font-family:Lovelo;
+	src: url(Fonts/lovelo/lovelo_line_light.otf);
+}
+
+@font-face{
+	font-family:Lane;
+	src: url(Fonts/lane/LANENAR_.ttf);
+}
+
+/*General*/
+
+h1{
+	font-family: Lovelo;
+	font-size: 4em;
+	margin-top:	20px;
+	margin-bottom: 20px;
+	text-decoration: underline;
+}
+
+h2{
+	font-family: Lovelo;
+	margin-top:	20px;
+	margin-bottom: 20px;
+}
+
+h3, h4, h5, h6{
+	font-family: Lane;
+}
+
+.form-group{
+	font-family: Lane;
+}
+
+/*Title for splash page*/
+
+.main .navBar{
+	background-color: rgb(239,239,239);
+	padding: 10px;
+}
+
+.title {
+	text-align: center;
+}
+
+.heading{
+	background-color: rgb(248,198,94);
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#splash_Title {
+	font-size: 5em;
+	color: white;
+}
+
+.navIcon {
+	width: 75px;
+}
+
+.navIconLogout {
+	width: 50px;
+}
+
+
+/*Top of every page indicating whether or not a user is logged in*/
+
+.main .userDetails{
+	background-color: rgb(248,198,94);
+}
+
+.main p{
+	padding: 5px;
+}
+
+.logo {
+	width: 20%;
+	margin: 20px;
+}
+
+.menuItem{
+		text-align: center;
+}
+
+/*Centering of Main Logo on home.php*/
+
+.mainBanner {
+	text-align: center;
+}
+
+.navbar{
+	overflow: auto;
+	
+}
+.donate{
+	margin: auto;
+    width: 50%;
+   color: blue;
+   padding: 10px;
+}
+.ourMission{
+	margin: 20px;
+}
+.contactUs{
+		margin: 20px;
+
+}
+/*Page Anchors*/
+
+.aboutAnchors{
+	background-color: rgb(14,64,142);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.aboutAnchors a:link{
+	color: white;
+}
+
+.aboutAnchors a:visited{
+	color: white;
+}
+
+.aboutAnchors a:hover{
+	
+}
+
+.aboutAnchors a:active{
+	
+}
+
+.donateAnchors{
+	background-color: rgb(213,67,52);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.donateAnchors a:link{
+	color: white;
+}
+
+.donateAnchors a:visited{
+	color: white;
+}
+
+.donateAnchors a:hover{
+	
+}
+
+.donateAnchors a:active{
+	
+}
+#me{
+	background-color: rgba(14,14,14,0.75);
+	color:white;
+
+}
+#mysettings{
+	background-color: rgba(14,14,14,0.75);
+	color:white;
+}
+#deleteProfile{
+	color: white !important;
+}
+
+.homeAnchors{
+	background-color: rgb(248,198,94);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.homeAnchors a:link{
+	color: white;
+}
+
+.homeAnchors a:visited{
+	color: white;
+}
+
+.homeAnchors a:hover{
+	
+}
+
+.homeAnchors a:active{
+	
+}
+
+.goodiesAnchors{
+	background-color: rgba(0,0,0, 0.75);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.goodiesAnchors a:link{
+	color: white;
+}
+
+.goodiesAnchors a:visited{
+	color: white;
+}
+
+.goodiesAnchors a:hover{
+	
+}
+
+.goodiesAnchors a:active{
+	
+}
+
+.profileAnchors{
+	background-color: rgb(48,117,73);
+	padding: 5px;
+	text-align:center;
+	color: white;
+	width: 100%;
+	margin: 0;
+}
+
+.profileAnchors a:link{
+	color: white;
+}
+
+.profileAnchors a:visited{
+	color: white;
+}
+
+.profileAnchors a:hover{
+	
+}
+
+.profileAnchors a:active{
+	
+}
+
+
+/*Override Dropdown Menu min-width*/
+
+.dropdown-menu {
+	padding: 5px;
+	min-width: 250px;
+}
+
+/*homecontent.php*/
+
+.divEvents {
+	background-color: rgb(213,67,52);
+	margin: 0;
+	width: 100%;
+	color:white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#myCarousel .carousel-inner{
+	margin: 20px auto;
+}
+
+#myCarousel .carousel-inner .item img{
+	width: 250px;
+	height: 250px;
+	margin: 50px auto;
+}
+
+.eventDescription{
+	color: white;
+	border-left: 2px solid white;
+	margin: 50px auto;
+}
+
+.divCalendar {
+	background-color: white;
+	margin: 0;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.divCalendar iframe {
+	width: 100%;
+}
+
+/*Admin Page*/
+
+#adminTitle{
+	background-color: rgba(14,14,14,0.75);
+	color:white;
+}
+
+#adminDetails{
+	background-color: rgb(48,117,73);
+	height: 20%;
+	color:white;
+	padding: 20px;
+	overflow: auto;
+}
+
+#addMember{
+	padding: 20px;
+	background-color: rgb(248,198,94);
+}
+
+.table{
+	 display: block;
+	  height: 500px;
+	  overflow-y: scroll;
+}
+
+.table td{
+	width:50%;
+}
+
+/*Event Page*/
+
+#eventsTitle{
+	background-color: rgba(14,14,14,0.75);
+	color:white;
+}
+
+.eventsUpcoming{
+	background-color: rgb(48,117,73);
+	height: 20%;
+	color:white;
+	padding: 20px;
+	overflow: auto;
+}
+
+.currentAdmin{
+	background-color: rgb(48,117,73);
+	height: 20%;
+	color:white;
+	padding: 20px;
+	overflow: auto;
+}
+
+.eventsUpcomingImg{
+	width: 75%;
+	margin: 20px auto;
+}
+
+.adminImg{
+	width: 75%;
+	margin: 20px auto;
+}
+
+.eventDetails {
+	padding: 20px;
+}
+
+.admingDetails {
+	padding: 20px;
+}
+
+.details {
+	color: white;
+	background-color: rgb(57,57,57);
+	border-radius: 15px 50px;
+	padding: 25px;
+	margin: 0 auto;
+	
+}
+
+.detailsA {
+	color: white;
+	background-color: rgb(57,57,57);
+	border-radius: 15px 50px;
+	padding: 25px;
+	margin: 0 auto;
+	
+}
+
+#addMember{
+	padding: 20px;
+	background-color: rgb(248,198,94);
+}
